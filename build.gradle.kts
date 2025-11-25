@@ -4,8 +4,19 @@ plugins {
     alias(libs.plugins.lombok)
 }
 
+var buildNumber = ""
+var buildType = ""
+if (System.getenv("CI_BUILD") == "true") {
+    buildType = "build"
+    buildNumber = System.getenv("GITHUB_RUN_NUMBER")
+}
+if (System.getenv("PR_BUILD") == "true") {
+    buildType = "pr"
+    buildNumber = System.getenv("GITHUB_RUN_NUMBER")
+}
+
 group = getConfig("maven_group")
-version = getConfig("mod_version")
+version = getConfig("mod_version") + if (buildType.isEmpty()) "" else "${buildType}.${buildNumber}"
 val modId = getConfig("mod_id")
 
 repositories {
