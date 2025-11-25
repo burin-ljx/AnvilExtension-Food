@@ -12,4 +12,4 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "neoforge-1.21.1"
+rootProject.name = "anvilextension_food-neoforge-1.21.1"

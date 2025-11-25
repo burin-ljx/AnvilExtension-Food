@@ -9,24 +9,15 @@ displayName="${mod_name}"
 displayURL = ""
 issueTrackerURL = ""
 logoFile = "pack.png"
-authors = ""
+authors = "burin"
 
-description = '''
-${mod_description}
-
-Contributors:
-${contributors}
-
-Supporters:
-${supporters}
-- and more...
-'''
+description = "${mod_description}"
 
 [[mixins]]
 config="${mod_id}.mixins.json"
 
 [[accessTransformers]]
-file="META-INF/accesstransformer.cfg"
+file="anvilextension_food.accesswidener"
 
 [[dependencies."${mod_id}"]]
     modId="neoforge"
@@ -39,5 +30,12 @@ file="META-INF/accesstransformer.cfg"
     modId="minecraft"
     type="required"
     versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies."${mod_id}"]]
+    modId="anvilcraft"
+    type="required"
+    versionRange="[1.5.0,)"
     ordering="NONE"
     side="BOTH"

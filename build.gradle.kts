@@ -4,18 +4,90 @@ plugins {
     alias(libs.plugins.lombok)
 }
 
-group = properties["maven_group"] as String
-version = properties["mod_version"] as String
+group = getConfig("maven_group")
+version = getConfig("mod_version")
+val modId = getConfig("mod_id")
 
 repositories {
-    maven {
+    mavenLocal()
+    mavenCentral()
+    maven { // Anvil Lib
+        name = "Cjsah Maven"
+        url = uri("https://server.cjsah.net:1002/maven/")
+    }
+    maven { // Modrinth File, LazyDFU, Jade
+        name = "Modrinth Maven"
+        url = uri("https://api.modrinth.com/maven")
+        content {
+            includeGroup("maven.modrinth")
+        }
+    }
+    maven { // Mod Menu, EMI
+        name = "TerraformersMC Maven"
+        url = uri("https://maven.terraformersmc.com/releases/")
+    }
+    maven { // Cloth Config, REI
+        name = "Shedaniel Maven"
+        url = uri("https://maven.shedaniel.me/")
+    }
+    maven { // CurseForge File
+        name = "CurseForge Maven"
+        url = uri("https://cursemaven.com")
+        content {
+            includeGroup("curse.maven")
+        }
+    }
+    maven { // Patchouli
+        name = "Jared's maven"
+        url = uri("https://maven.blamejared.com/")
+    }
+    maven { // Registrate Fork
         name = "Ithundxr Maven"
         url = uri("https://maven.ithundxr.dev/snapshots")
+    }
+    maven { // KubeJS, Rhino
+        name = "Saps Maven"
+        url = uri("https://maven.latvian.dev/releases")
+        content {
+            includeGroup("dev.latvian.mods")
+            includeGroup("dev.latvian.apps")
+        }
+    }
+    maven {
+        url = uri("https://jitpack.io")
+        content {
+            includeGroup("com.github.rtyley")
+        }
+    }
+    maven { // TOP
+        name = "k-4u Maven"
+        url = uri("https://maven.k-4u.nl")
+    }
+    maven { // Curios API
+        name = "OctoStudios Maven"
+        url = uri("https://maven.octo-studios.com/releases")
+    }
+    maven {
+        url = uri("https://maven.su5ed.dev/releases")
+    }
+    maven { // Create Mod, Ponder
+        name = "Create Mod Maven"
+        url = uri("https://maven.createmod.net")
+    }
+    maven {
+        url = uri("https://maven.latvian.dev/releases")
+        content {
+            includeGroup("dev.latvian.mods")
+            includeGroup("dev.latvian.apps")
+        }
+    }
+    maven { // Twilight Forest
+        url = uri("https://maven.tamaized.com/releases")
     }
 }
 
 dependencies {
-    implementation(libs.registrate)
+    implementation(libs.anvilcraft)
 }
 
 neoForge {
@@ -27,31 +99,31 @@ neoForge {
     }
 
     accessTransformers {
-        files("src/main/resources/META-INF/accesstransformer.cfg")
+        files("src/main/resources/$modId.accesswidener")
     }
 
     runs {
         register("client") {
             client()
-            systemProperty("neoforge.enabledGameTestNamespaces", properties["mod_id"] as String)
+            systemProperty("neoforge.enabledGameTestNamespaces", modId)
         }
 
         register("server") {
             server()
             programArgument("--nogui")
-            systemProperty("neoforge.enabledGameTestNamespaces", properties["mod_id"] as String)
+            systemProperty("neoforge.enabledGameTestNamespaces", modId)
         }
 
         register("gameTestServer") {
             type = "gameTestServer"
-            systemProperty("neoforge.enabledGameTestNamespaces", properties["mod_id"] as String)
+            systemProperty("neoforge.enabledGameTestNamespaces", modId)
         }
 
         register("data") {
             data()
             programArguments.addAll(
                 "--mod",
-                properties["mod_id"] as String,
+                modId,
                 "--all",
                 "--output",
                 file("src/generated/resources/").absolutePath,
@@ -67,7 +139,7 @@ neoForge {
     }
 
     mods {
-        register(properties["mod_id"] as String) {
+        register(modId) {
             sourceSet(sourceSets.main.get())
         }
     }
