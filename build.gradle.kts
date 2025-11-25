@@ -16,7 +16,7 @@ if (System.getenv("PR_BUILD") == "true") {
 }
 
 group = getConfig("maven_group")
-version = getConfig("mod_version") + if (buildType.isEmpty()) "" else "${buildType}.${buildNumber}"
+version = getConfig("mod_version") + if (buildType.isEmpty()) "" else "+${buildType}.${buildNumber}"
 val modId = getConfig("mod_id")
 
 repositories {
