@@ -163,7 +163,7 @@ tasks.register<Jar>("sourceJar") {
 }
 
 base {
-    archivesName.set("${project.name}-${libs.versions.parchment.get()}")
+    archivesName.set("${project.name}-${libs.versions.minecraft.get()}")
 }
 
 fun getConfig(key: String): String {
