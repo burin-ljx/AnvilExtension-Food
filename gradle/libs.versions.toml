@@ -5,9 +5,11 @@ minecraft = "1.21.1"
 parchment = "2024.11.17"
 lombok = "8.7.1"
 anvilcraft = "1.5.0+pre-release.22"
+condensedCreative = "3.4.1+1.21"
 
 [libraries]
 anvilcraft = { group = "dev.dubhe", name = "anvilcraft-neoforge-1.21.1", version.ref = "anvilcraft" }
+condensedCreative = { group = "maven.modrinth", name = "condensed-creative", version.ref = "condensedCreative" }
 
 [plugins]
 modDevGradle = { id = "net.neoforged.moddev", version.ref = "modDevGradle" }
