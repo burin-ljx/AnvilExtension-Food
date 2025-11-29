@@ -39,3 +39,10 @@ file="anvilextension_food.accesswidener"
     versionRange="[1.5.0,)"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies."${mod_id}"]]
+    modId="condensed_creative"
+    type="required"
+    versionRange="[3.4.1,)"
+    ordering="NONE"
+    side="BOTH"

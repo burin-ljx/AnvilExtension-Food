@@ -99,6 +99,9 @@ repositories {
 
 dependencies {
     implementation(libs.anvilcraft)
+
+    implementation(libs.condensedCreative)
+    jarJar(libs.condensedCreative)
 }
 
 neoForge {
