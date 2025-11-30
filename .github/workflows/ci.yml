@@ -1,4 +1,4 @@
-name: CI for AnvilExtension: Food Mod
+name: CI for Mod
 on:
   workflow_dispatch:
   push:
