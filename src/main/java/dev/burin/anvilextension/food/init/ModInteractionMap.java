@@ -26,7 +26,11 @@ public class ModInteractionMap {
     public static final CauldronInteraction.InteractionMap MILK = CauldronInteraction.newInteractionMap("milk");
 
     public static void initInteractionMap() {
-        bucketInteraction(MILK, Items.MILK_BUCKET.getDefaultInstance(), ModBlocks.MILK_CAULDRON.getDefaultState().setValue(LayeredCauldronBlock.LEVEL, 3));
+        bucketInteraction(
+            MILK,
+            Items.MILK_BUCKET.getDefaultInstance(),
+            ModBlocks.MILK_CAULDRON.getDefaultState().setValue(LayeredCauldronBlock.LEVEL, 3)
+        );
         for (Map.Entry<Color, ItemEntry<CupItem>> entry : ModTablewareItems.COLORFUL_CUPS.entrySet()) {
             glassCupInteraction(MILK, entry.getValue().asStack());
         }
@@ -59,11 +63,11 @@ public class ModInteractionMap {
     }
 
     private static void glassCupInteraction(CauldronInteraction.InteractionMap map, ItemStack emptyCupItem) {
-        var milkMap = map.map();
         ItemStack fullCupItem = emptyCupItem.copy();
         fullCupItem.set(ModComponents.EXTRA_DATA, 0);
         fullCupItem.set(DataComponents.FOOD, ModFoods.MILK);
         fullCupItem.setCount(1);
+        var milkMap = map.map();
         milkMap.put(
             emptyCupItem.getItem(),
             (state, level, pos, player, hand, stack) -> {
