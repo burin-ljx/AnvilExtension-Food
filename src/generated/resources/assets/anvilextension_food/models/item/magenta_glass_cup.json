@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "anvilextension_food:item/magenta_glass_cup"
-  }
-}

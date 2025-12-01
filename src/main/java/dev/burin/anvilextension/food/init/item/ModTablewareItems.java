@@ -4,6 +4,8 @@ import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.burin.anvilextension.food.Color;
+import dev.burin.anvilextension.food.item.CupItem;
+import dev.dubhe.anvilcraft.util.DataGenUtil;
 import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -18,10 +20,10 @@ public class ModTablewareItems {
         REGISTRATE.defaultCreativeTab(ModCreativeModeTabs.TABLEWARE.getKey());
     }
 
-    public static final Map<Color, ItemEntry<Item>> COLORFUL_CUPS = registerColorfulCupItem(Item::new);
+    public static final Map<Color, ItemEntry<CupItem>> COLORFUL_CUPS = registerColorfulCupItem(CupItem::new);
 
-    private static Map<Color, ItemEntry<Item>> registerColorfulCupItem(NonNullFunction<Item.Properties, Item> factory) {
-        Map<Color, ItemEntry<Item>> map = new Object2ObjectLinkedOpenHashMap<>();
+    private static Map<Color, ItemEntry<CupItem>> registerColorfulCupItem(NonNullFunction<Item.Properties, CupItem> factory) {
+        Map<Color, ItemEntry<CupItem>> map = new Object2ObjectLinkedOpenHashMap<>();
         for (Map.Entry<Color, Item> entry : Color.COLORFUL_GLASS_PANE.entrySet()) {
             String color = entry.getKey().getName() + "_";
             if (entry.getKey() == Color.TRANSPARENT) {
@@ -32,6 +34,7 @@ public class ModTablewareItems {
                 REGISTRATE
                     .item(color + "glass_cup", factory)
                     .tag(ModItemTags.GLASS_CUP)
+                    .model(DataGenUtil::noExtraModelOrState)
                     .recipe((ctx, prov) -> ShapedRecipeBuilder
                         .shaped(RecipeCategory.MISC, ctx.get())
                         .pattern("A A")
