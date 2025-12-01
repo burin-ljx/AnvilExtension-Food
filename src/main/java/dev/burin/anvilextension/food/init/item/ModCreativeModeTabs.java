@@ -24,6 +24,16 @@ public class ModCreativeModeTabs {
             .withTabsAfter(of("drinks"))
             .build());
 
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> DRINKS = REGISTER
+        .register("drinks", () -> CreativeModeTab.builder()
+            .icon(ModDrinkItems.COLORFUL_GLASS_MILKS::getFirst)
+            .title(REGISTRATE.addLang("itemGroup", of("drinks"), "AnvilExtension: Food | Drinks"))
+            .displayItems((parameters, output) -> {
+                output.acceptAll(ModDrinkItems.COLORFUL_GLASS_MILKS);
+            })
+            .withTabsBefore(ModItemGroups.ANVILCRAFT_BUILD_BLOCK.getId(), TABLEWARE.getId())
+            .build());
+
     public static void register(IEventBus eventBus) {
         REGISTER.register(eventBus);
     }

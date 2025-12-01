@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "anvilextension_food:item/glass_milk/blue_glass_milk"
+  }
+}

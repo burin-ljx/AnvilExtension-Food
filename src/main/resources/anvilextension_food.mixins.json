@@ -1,9 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "dev.burin.template.mixin",
+  "package": "dev.burin.anvilextension.food.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "CondensedItemEntryMixin"
+  ],
   "client": [],
   "injectors": {
     "defaultRequire": 1

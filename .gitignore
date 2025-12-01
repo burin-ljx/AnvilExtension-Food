@@ -45,3 +45,4 @@ bin/
 run/
 gradlew
 graldew.bat
+src/generated/resources/.cache

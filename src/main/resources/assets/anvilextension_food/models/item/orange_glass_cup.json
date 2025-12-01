@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "anvilextension_food:item/glass_cup/orange_glass_cup"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "anvilextension_food:extra_data": 0
+      },
+      "model": "anvilextension_food:item/glass_milk/orange_glass_milk"
+    }
+  ]
+}

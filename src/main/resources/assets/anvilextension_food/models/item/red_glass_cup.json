@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "anvilextension_food:item/glass_cup/red_glass_cup"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "anvilextension_food:extra_data": 0
+      },
+      "model": "anvilextension_food:item/glass_milk/red_glass_milk"
+    }
+  ]
+}

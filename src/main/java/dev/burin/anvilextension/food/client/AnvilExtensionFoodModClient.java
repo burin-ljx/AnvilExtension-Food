@@ -3,6 +3,7 @@ package dev.burin.anvilextension.food.client;
 import dev.burin.anvilextension.food.AnvilExtensionFoodMod;
 import dev.burin.anvilextension.food.Color;
 import dev.burin.anvilextension.food.init.item.ModCreativeModeTabs;
+import dev.burin.anvilextension.food.init.item.ModDrinkItems;
 import dev.burin.anvilextension.food.init.item.ModItemTags;
 import dev.burin.anvilextension.food.init.item.ModTablewareItems;
 import dev.dubhe.anvilcraft.AnvilCraft;
@@ -158,9 +159,15 @@ public class AnvilExtensionFoodModClient implements CondensedCreativeInitializer
         // endregion
 
         CondensedEntryRegistry.fromTag(
-            AnvilExtensionFoodMod.of("glass_cups"),
+            AnvilExtensionFoodMod.of("glass_cup"),
             ModTablewareItems.COLORFUL_CUPS.get(Color.TRANSPARENT).asItem(),
             ModItemTags.GLASS_CUP
         ).addToItemGroup(ModCreativeModeTabs.TABLEWARE.get());
+
+        CondensedEntryRegistry.fromItemStacks(
+            AnvilExtensionFoodMod.of("glass_milk"),
+            ModDrinkItems.COLORFUL_GLASS_MILKS.getFirst().getItem(),
+            ModDrinkItems.COLORFUL_GLASS_MILKS
+        ).addToItemGroup(ModCreativeModeTabs.DRINKS.get());
     }
 }
