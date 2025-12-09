@@ -70,7 +70,7 @@ public class CupItem extends Item {
 
         if (!level.isClientSide) {
             int extraData = stack.getOrDefault(ModComponents.EXTRA_DATA, -1);
-            if (extraData == 1) {
+            if (extraData == 0) {
                 livingEntity.removeEffectsCuredBy(net.neoforged.neoforge.common.EffectCures.MILK);
             }
             FoodProperties foodProperties = stack.getFoodProperties(livingEntity);

@@ -6,8 +6,10 @@ parchment = "2024.11.17"
 lombok = "8.7.1"
 anvilcraft = "1.5.0+pre-release.22"
 condensedCreative = "3.4.1+1.21"
+anvillib = "1.4.0+build.170"
 
 [libraries]
+anvillib = { group = "dev.anvilcraft.lib", name = "anvillib-neoforge-1.21.1", version.ref = "anvillib" }
 anvilcraft = { group = "dev.dubhe", name = "anvilcraft-neoforge-1.21.1", version.ref = "anvilcraft" }
 condensedCreative = { group = "maven.modrinth", name = "condensed-creative", version.ref = "condensedCreative" }
 

@@ -30,6 +30,7 @@ public class ModCreativeModeTabs {
             .title(REGISTRATE.addLang("itemGroup", of("drinks"), "AnvilExtension: Food | Drinks"))
             .displayItems((parameters, output) -> {
                 output.acceptAll(ModDrinkItems.COLORFUL_GLASS_MILKS);
+                output.acceptAll(ModDrinkItems.COLORFUL_GLASS_HOT_COCOAS);
             })
             .withTabsBefore(ModItemGroups.ANVILCRAFT_BUILD_BLOCK.getId(), TABLEWARE.getId())
             .build());

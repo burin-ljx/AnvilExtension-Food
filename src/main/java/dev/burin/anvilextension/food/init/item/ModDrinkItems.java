@@ -15,4 +15,11 @@ public class ModDrinkItems {
             list.add(itemStack);
         }
     });
+
+    public static final List<ItemStack> COLORFUL_GLASS_HOT_COCOAS = Util.make(new ObjectArrayList<>(), (list) -> {
+        for (Color color : Color.values()) {
+            ItemStack itemStack = CupItem.applyData(ModTablewareItems.COLORFUL_CUPS.get(color), 1, ModFoods.HOT_COCOA);
+            list.add(itemStack);
+        }
+    });
 }

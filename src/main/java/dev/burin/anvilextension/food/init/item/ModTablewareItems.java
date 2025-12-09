@@ -3,6 +3,7 @@ package dev.burin.anvilextension.food.init.item;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
+import dev.burin.anvilextension.food.AnvilExtensionFoodMod;
 import dev.burin.anvilextension.food.Color;
 import dev.burin.anvilextension.food.item.CupItem;
 import dev.dubhe.anvilcraft.util.DataGenUtil;
@@ -41,7 +42,7 @@ public class ModTablewareItems {
                         .pattern(" A ")
                         .define('A', entry.getValue())
                         .unlockedBy("has_item", RegistrateRecipeProvider.has(entry.getValue()))
-                        .save(prov))
+                        .save(prov, AnvilExtensionFoodMod.of("shaped/" + ctx.getName())))
                     .register()
             );
         }
