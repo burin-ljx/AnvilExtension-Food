@@ -169,5 +169,11 @@ public class AnvilExtensionFoodModClient implements CondensedCreativeInitializer
             ModDrinkItems.COLORFUL_GLASS_MILKS.getFirst().getItem(),
             ModDrinkItems.COLORFUL_GLASS_MILKS
         ).addToItemGroup(ModCreativeModeTabs.DRINKS.get());
+
+        CondensedEntryRegistry.fromItemStacks(
+            AnvilExtensionFoodMod.of("glass_hot_cocoa"),
+            ModDrinkItems.COLORFUL_GLASS_HOT_COCOAS.getFirst().getItem(),
+            ModDrinkItems.COLORFUL_GLASS_HOT_COCOAS
+        ).addToItemGroup(ModCreativeModeTabs.DRINKS.get());
     }
 }

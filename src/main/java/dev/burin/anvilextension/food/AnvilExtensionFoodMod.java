@@ -3,8 +3,10 @@ package dev.burin.anvilextension.food;
 import com.tterrag.registrate.Registrate;
 import com.tterrag.registrate.providers.ProviderType;
 import dev.burin.anvilextension.food.data.lang.LangLoader;
+import dev.burin.anvilextension.food.data.recipe.RecipeLoader;
 import dev.burin.anvilextension.food.init.ModBlocks;
-import dev.burin.anvilextension.food.init.ModInteractionMap;
+import dev.burin.anvilextension.food.init.ModCauldronInteraction;
+import dev.burin.anvilextension.food.init.ModRecipeTypes;
 import dev.burin.anvilextension.food.init.item.ModComponents;
 import dev.burin.anvilextension.food.init.item.ModCreativeModeTabs;
 import dev.burin.anvilextension.food.init.item.ModItems;
@@ -28,12 +30,15 @@ public class AnvilExtensionFoodMod {
         ModCreativeModeTabs.register(eventBus);
         ModBlocks.register();
         ModComponents.register(eventBus);
+        ModRecipeTypes.register(eventBus);
 
         NeoForgeMod.enableMilkFluid();
 
         registerEvents(eventBus);
 
         REGISTRATE.addDataGenerator(ProviderType.LANG, LangLoader::init);
+        REGISTRATE.addDataGenerator(ProviderType.RECIPE, RecipeLoader::init);
+
         LOGGER.info("Mod loading");
     }
 
@@ -42,7 +47,7 @@ public class AnvilExtensionFoodMod {
     }
 
     private static void loadComplete(FMLLoadCompleteEvent event) {
-        event.enqueueWork(ModInteractionMap::initInteractionMap);
+        event.enqueueWork(ModCauldronInteraction::register);
     }
 
     public static ResourceLocation of(String path) {

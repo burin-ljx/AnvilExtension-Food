@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "anvilextension_food:item/glass_hot_cocoa/light_gray_glass_hot_cocoa"
+  }
+}

@@ -9,6 +9,12 @@
         "anvilextension_food:extra_data": 0
       },
       "model": "anvilextension_food:item/glass_milk/glass_milk"
+    },
+    {
+      "predicate": {
+        "anvilextension_food:extra_data": 1
+      },
+      "model": "anvilextension_food:item/glass_hot_cocoa/glass_hot_cocoa"
     }
   ]
 }

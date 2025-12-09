@@ -99,6 +99,7 @@ repositories {
 
 dependencies {
     implementation(libs.anvilcraft)
+    implementation(libs.anvillib)
 
     implementation(libs.condensedCreative)
     jarJar(libs.condensedCreative)

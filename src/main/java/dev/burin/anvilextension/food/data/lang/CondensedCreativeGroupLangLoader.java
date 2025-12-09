@@ -95,5 +95,6 @@ public class CondensedCreativeGroupLangLoader {
 
         provider.add("condensed_creative.anvilextension_food.glass_cup", "Glass Cup");
         provider.add("condensed_creative.anvilextension_food.glass_milk", "Glass of Milk");
+        provider.add("condensed_creative.anvilextension_food.glass_hot_cocoa", "Glass of Hot Cocoa");
     }
 }

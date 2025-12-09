@@ -1,0 +1,15 @@
+{
+  "type": "anvilextension_food:food_cooking",
+  "fluid": "anvilextension_food:milk",
+  "ingredients": [
+    {
+      "count": 4,
+      "items": "anvilcraft:cocoa_powder"
+    },
+    {
+      "items": "minecraft:sugar"
+    }
+  ],
+  "results": [],
+  "transform": "anvilextension_food:hot_cocoa"
+}

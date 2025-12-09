@@ -1,0 +1,11 @@
+{
+  "type": "anvilextension_food:food_cooking",
+  "fluid": "anvilextension_food:milk",
+  "ingredients": [
+    {
+      "items": "anvilcraft:chocolate"
+    }
+  ],
+  "results": [],
+  "transform": "anvilextension_food:hot_cocoa"
+}
