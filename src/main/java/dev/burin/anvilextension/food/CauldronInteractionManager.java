@@ -47,6 +47,14 @@ public class CauldronInteractionManager {
     }
 
     public interface CauldronInteraction {
-        InteractionResult use(Level level, Player player, InteractionHand hand, BlockPos pos, BlockState state, ItemStack itemStack, BlockHitResult hitResult);
+        InteractionResult use(
+            Level level,
+            Player player,
+            InteractionHand hand,
+            BlockPos pos,
+            BlockState state,
+            ItemStack itemStack,
+            BlockHitResult hitResult
+        );
     }
 }

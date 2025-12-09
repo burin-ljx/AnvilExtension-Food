@@ -110,9 +110,9 @@ public class CookingRecipe extends AbstractProcessRecipe<CookingRecipe> {
         }
 
         @Override
-        public void validate(ResourceLocation pId) {
+        public void validate(ResourceLocation id) {
             if (itemIngredients.isEmpty()) {
-                throw new IllegalArgumentException("Recipe ingredients must not be empty, RecipeId: " + pId);
+                throw new IllegalArgumentException("Recipe ingredients must not be empty, RecipeId: " + id);
             }
         }
 

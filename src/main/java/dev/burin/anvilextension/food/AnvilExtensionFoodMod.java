@@ -12,12 +12,11 @@ import dev.burin.anvilextension.food.init.item.ModCreativeModeTabs;
 import dev.burin.anvilextension.food.init.item.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import net.neoforged.fml.common.Mod;
 
 @Mod(AnvilExtensionFoodMod.MOD_ID)
 public class AnvilExtensionFoodMod {
