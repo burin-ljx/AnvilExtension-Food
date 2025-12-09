@@ -119,6 +119,11 @@ neoForge {
         files("src/main/resources/$modId.accesswidener")
     }
 
+    interfaceInjectionData {
+        from("src/main/resources/interface_injections.json")
+        publish(file("src/main/resources/interface_injections.json"))
+    }
+
     runs {
         register("client") {
             client()

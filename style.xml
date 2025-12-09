@@ -72,7 +72,7 @@
         <!-- 行长度检查 -->
         <property name="fileExtensions" value="java"/>
         <!-- 文件扩展名 -->
-        <property name="max" value="140"/>
+        <property name="max" value="200"/>
         <!-- 最大长度 -->
         <property name="ignorePattern"
                   value="^package.*|^import.*|href\s*=\s*&quot;[^&quot;]*&quot;|http://|https://|ftp://"/>

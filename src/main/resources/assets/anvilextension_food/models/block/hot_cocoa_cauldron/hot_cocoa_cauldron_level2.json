@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/template_cauldron_level2",
+  "parent": "anvilcraft:block/template_cauldron_level2of4",
   "textures": {
     "bottom": "minecraft:block/cauldron_bottom",
     "content": "anvilextension_food:block/hot_cocoa_still",
