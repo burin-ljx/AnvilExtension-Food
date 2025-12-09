@@ -103,6 +103,8 @@ dependencies {
 
     implementation(libs.condensedCreative)
     jarJar(libs.condensedCreative)
+
+    runtimeOnly(libs.jade)
 }
 
 neoForge {
