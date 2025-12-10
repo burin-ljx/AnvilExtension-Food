@@ -39,6 +39,7 @@ public class AnvilExtensionFoodMod {
         REGISTRATE.addDataGenerator(ProviderType.RECIPE, RecipeLoader::init);
 
         LOGGER.info("Mod loading");
+        LOGGER.info("abcd");
     }
 
     private static void registerEvents(IEventBus eventBus) {
