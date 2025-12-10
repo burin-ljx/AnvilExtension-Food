@@ -34,7 +34,6 @@ public class AnvilExtensionFoodMod {
         NeoForgeMod.enableMilkFluid();
 
         registerEvents(eventBus);
-        hjeksdsdnolknfsdcxidksx
 
         REGISTRATE.addDataGenerator(ProviderType.LANG, LangLoader::init);
         REGISTRATE.addDataGenerator(ProviderType.RECIPE, RecipeLoader::init);
