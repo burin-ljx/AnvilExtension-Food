@@ -5,6 +5,7 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.burin.anvilextension.food.AnvilExtensionFoodMod;
 import dev.burin.anvilextension.food.Color;
+import dev.burin.anvilextension.food.init.ModCreativeModeTabs;
 import dev.burin.anvilextension.food.item.CupItem;
 import dev.dubhe.anvilcraft.util.DataGenUtil;
 import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap;

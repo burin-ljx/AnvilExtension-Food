@@ -1,5 +1,9 @@
 pluginManagement {
     repositories {
+        maven {
+            name = "Aliyun Maven"
+            url = uri("https://maven.aliyun.com/repository/public/")
+        }
         mavenLocal()
         gradlePluginPortal()
         maven { url = uri("https://maven.neoforged.net/releases") }
@@ -8,6 +12,10 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
+        maven {
+            name = "Aliyun Maven"
+            url = uri("https://maven.aliyun.com/repository/public/")
+        }
         mavenCentral()
     }
 }

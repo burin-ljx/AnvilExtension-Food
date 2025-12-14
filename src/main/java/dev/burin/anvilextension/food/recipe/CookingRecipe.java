@@ -7,6 +7,7 @@ import dev.anvilcraft.lib.recipe.component.ChanceItemStack;
 import dev.anvilcraft.lib.recipe.component.ItemIngredientPredicate;
 import dev.burin.anvilextension.food.AnvilExtensionFoodMod;
 import dev.burin.anvilextension.food.init.ModRecipeTypes;
+import dev.dubhe.anvilcraft.recipe.anvil.predicate.block.HasCauldron;
 import dev.dubhe.anvilcraft.recipe.anvil.util.WrapUtils;
 import dev.dubhe.anvilcraft.recipe.anvil.wrap.AbstractProcessRecipe;
 import dev.dubhe.anvilcraft.recipe.component.HasCauldronSimple;
@@ -111,8 +112,12 @@ public class CookingRecipe extends AbstractProcessRecipe<CookingRecipe> {
 
         @Override
         public void validate(ResourceLocation id) {
-            if (itemIngredients.isEmpty()) {
-                throw new IllegalArgumentException("Recipe ingredients must not be empty, RecipeId: " + id);
+            if (itemIngredients.isEmpty() && this.hasCauldron.build().fluid().equals(HasCauldron.EMPTY)) {
+                throw new IllegalArgumentException("CookingRecipe: " + id + " has no ingredients or no cauldron");
+            }
+
+            if (results.isEmpty() && this.hasCauldron.build().transform().equals(HasCauldron.NULL)) {
+                throw new IllegalArgumentException("CookingRecipe: " + id + " has no results or no transform cauldron");
             }
         }
 

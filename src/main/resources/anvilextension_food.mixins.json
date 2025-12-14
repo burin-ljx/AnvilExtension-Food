@@ -4,6 +4,7 @@
   "package": "dev.burin.anvilextension.food.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "BucketItemMixin",
     "CondensedItemEntryMixin"
   ],
   "client": [],

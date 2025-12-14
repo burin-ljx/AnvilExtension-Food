@@ -1,0 +1,7 @@
+{
+  "type": "anvilextension_food:food_cooking",
+  "fluid": "anvilextension_food:seawater",
+  "ingredients": [],
+  "results": [],
+  "transform": "anvilextension_food:salt"
+}

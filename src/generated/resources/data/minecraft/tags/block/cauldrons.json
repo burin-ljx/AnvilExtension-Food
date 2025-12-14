@@ -1,6 +1,8 @@
 {
   "values": [
     "anvilextension_food:milk_cauldron",
-    "anvilextension_food:hot_cocoa_cauldron"
+    "anvilextension_food:hot_cocoa_cauldron",
+    "anvilextension_food:seawater_cauldron",
+    "anvilextension_food:salt_cauldron"
   ]
 }

@@ -1,6 +1,7 @@
 {
   "block.anvilextension_food.hot_cocoa_cauldron": "装有热可可的炼药锅",
   "block.anvilextension_food.milk_cauldron": "装有牛奶的炼药锅",
+  "block.anvilextension_food.seawater_cauldron": "装有海水的炼药锅",
   "condensed_creative.anvilextension_food.glass_cup": "玻璃杯",
   "condensed_creative.anvilextension_food.glass_hot_cocoa": "一杯热可可",
   "condensed_creative.anvilextension_food.glass_milk": "一杯牛奶",
@@ -87,10 +88,12 @@
   "item.anvilextension_food.pink_glass_cup": "粉红色玻璃杯",
   "item.anvilextension_food.purple_glass_cup": "紫色玻璃杯",
   "item.anvilextension_food.red_glass_cup": "红色玻璃杯",
+  "item.anvilextension_food.seawater_bucket": "海水桶",
   "item.anvilextension_food.white_glass_cup": "白色玻璃杯",
   "item.anvilextension_food.yellow_glass_cup": "黄色玻璃杯",
   "item.cup.0": "一杯牛奶",
   "item.cup.1": "一杯热可可",
   "itemGroup.anvilextension_food.drinks": "铁砧扩展：食物 | 饮品",
+  "itemGroup.anvilextension_food.ingredient": "铁砧扩展：食物 | 原材料",
   "itemGroup.anvilextension_food.tableware": "铁砧扩展：食物 | 餐具"
 }

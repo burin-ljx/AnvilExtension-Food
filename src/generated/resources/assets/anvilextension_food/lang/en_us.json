@@ -1,6 +1,9 @@
 {
   "block.anvilextension_food.hot_cocoa_cauldron": "Hot Cocoa Cauldron",
   "block.anvilextension_food.milk_cauldron": "Milk Cauldron",
+  "block.anvilextension_food.salt_block": "Block of Salt",
+  "block.anvilextension_food.salt_cauldron": "Salt Cauldron",
+  "block.anvilextension_food.seawater_cauldron": "Seawater Cauldron",
   "condensed_creative.anvilextension_food.glass_cup": "Glass Cup",
   "condensed_creative.anvilextension_food.glass_hot_cocoa": "Glass of Hot Cocoa",
   "condensed_creative.anvilextension_food.glass_milk": "Glass of Milk",
@@ -87,10 +90,14 @@
   "item.anvilextension_food.pink_glass_cup": "Pink Glass Cup",
   "item.anvilextension_food.purple_glass_cup": "Purple Glass Cup",
   "item.anvilextension_food.red_glass_cup": "Red Glass Cup",
+  "item.anvilextension_food.salt": "Salt",
+  "item.anvilextension_food.seawater_bucket": "Seawater Bucket",
   "item.anvilextension_food.white_glass_cup": "White Glass Cup",
   "item.anvilextension_food.yellow_glass_cup": "Yellow Glass Cup",
   "item.cup.0": "Glass of Milk",
   "item.cup.1": "Glass of Hot Cocoa",
+  "itemGroup.anvilextension_food.building_block": "AnvilExtension: Food | Building Block",
   "itemGroup.anvilextension_food.drinks": "AnvilExtension: Food | Drinks",
+  "itemGroup.anvilextension_food.ingredient": "AnvilExtension: Food | Ingredient",
   "itemGroup.anvilextension_food.tableware": "AnvilExtension: Food | Tableware"
 }
