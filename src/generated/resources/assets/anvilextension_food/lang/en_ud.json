@@ -1,6 +1,9 @@
 {
   "block.anvilextension_food.hot_cocoa_cauldron": "uoɹpןnɐƆ ɐoɔoƆ ʇoH",
   "block.anvilextension_food.milk_cauldron": "uoɹpןnɐƆ ʞןıW",
+  "block.anvilextension_food.salt_block": "ʇןɐS ɟo ʞɔoןᗺ",
+  "block.anvilextension_food.salt_cauldron": "uoɹpןnɐƆ ʇןɐS",
+  "block.anvilextension_food.seawater_cauldron": "uoɹpןnɐƆ ɹǝʇɐʍɐǝS",
   "condensed_creative.anvilextension_food.glass_cup": "dnƆ ssɐן⅁",
   "condensed_creative.anvilextension_food.glass_hot_cocoa": "ɐoɔoƆ ʇoH ɟo ssɐן⅁",
   "condensed_creative.anvilextension_food.glass_milk": "ʞןıW ɟo ssɐן⅁",
@@ -87,10 +90,14 @@
   "item.anvilextension_food.pink_glass_cup": "dnƆ ssɐן⅁ ʞuıԀ",
   "item.anvilextension_food.purple_glass_cup": "dnƆ ssɐן⅁ ǝןdɹnԀ",
   "item.anvilextension_food.red_glass_cup": "dnƆ ssɐן⅁ pǝᴚ",
+  "item.anvilextension_food.salt": "ʇןɐS",
+  "item.anvilextension_food.seawater_bucket": "ʇǝʞɔnᗺ ɹǝʇɐʍɐǝS",
   "item.anvilextension_food.white_glass_cup": "dnƆ ssɐן⅁ ǝʇıɥM",
   "item.anvilextension_food.yellow_glass_cup": "dnƆ ssɐן⅁ ʍoןןǝʎ",
   "item.cup.0": "ʞןıW ɟo ssɐן⅁",
   "item.cup.1": "ɐoɔoƆ ʇoH ɟo ssɐן⅁",
+  "itemGroup.anvilextension_food.building_block": "ʞɔoןᗺ buıpןınᗺ | pooℲ :uoısuǝʇxƎןıʌuⱯ",
   "itemGroup.anvilextension_food.drinks": "sʞuıɹᗡ | pooℲ :uoısuǝʇxƎןıʌuⱯ",
+  "itemGroup.anvilextension_food.ingredient": "ʇuǝıpǝɹbuI | pooℲ :uoısuǝʇxƎןıʌuⱯ",
   "itemGroup.anvilextension_food.tableware": "ǝɹɐʍǝןqɐ⟘ | pooℲ :uoısuǝʇxƎןıʌuⱯ"
 }

@@ -1,11 +1,14 @@
 package dev.burin.anvilextension.food.init;
 
 import dev.burin.anvilextension.food.AnvilExtensionFoodMod;
-import dev.burin.anvilextension.food.CauldronInteractionManager;
+import dev.burin.anvilextension.food.api.CauldronInteractionManager;
+import dev.burin.anvilextension.food.init.block.ModCauldronBlocks;
 import dev.burin.anvilextension.food.init.item.ModComponents;
 import dev.burin.anvilextension.food.init.item.ModFoods;
+import dev.burin.anvilextension.food.init.item.ModIngredientItems;
 import dev.burin.anvilextension.food.init.item.ModItemTags;
 import dev.dubhe.anvilcraft.block.Layered4LevelCauldronBlock;
+import lombok.experimental.UtilityClass;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.core.component.DataComponents;
@@ -25,29 +28,53 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 
+@UtilityClass
 public class ModCauldronInteraction {
     public static final CauldronInteraction.InteractionMap MILK = CauldronInteraction.newInteractionMap("milk");
     public static final CauldronInteraction.InteractionMap HOT_COCOA = CauldronInteraction.newInteractionMap("hot_cocoa");
+    public static final CauldronInteraction.InteractionMap SEAWATER = CauldronInteraction.newInteractionMap("seawater");
     public static final CauldronInteraction.InteractionMap SOLID = CauldronInteraction.newInteractionMap("solid");
 
     public static void register() {
+        var emptyMap = CauldronInteraction.EMPTY.map();
         var milkMap = MILK.map();
         milkMap.put(
             Items.BUCKET,
             (state, level, pos, player, hand, stack) -> CauldronInteraction.fillBucket(
                 state, level, pos, player, hand, stack, Items.MILK_BUCKET.getDefaultInstance(),
-                (bs) -> ModBlocks.MILK_CAULDRON.get().isFull(state),
+                (bs) -> ModCauldronBlocks.MILK_CAULDRON.get().isFull(state),
                 SoundEvents.BUCKET_FILL
             )
         );
-        var emptyMap = CauldronInteraction.EMPTY.map();
         emptyMap.put(
-            Items.MILK_BUCKET.getDefaultInstance().getItem(),
+            Items.MILK_BUCKET,
             (state, level, pos, player, hand, stack) -> {
                 if (state.is(Blocks.CAULDRON)) {
                     return CauldronInteraction.emptyBucket(
                         level, pos, player, hand, stack,
-                        ModBlocks.MILK_CAULDRON.getDefaultState().setValue(Layered4LevelCauldronBlock.LEVEL, 4),
+                        ModCauldronBlocks.MILK_CAULDRON.get().fullFilled(),
+                        SoundEvents.BUCKET_EMPTY
+                    );
+                }
+                return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            }
+        );
+        var seawaterMap = SEAWATER.map();
+        seawaterMap.put(
+            Items.BUCKET,
+            (state, level, pos, player, hand, stack) -> CauldronInteraction.fillBucket(
+                state, level, pos, player, hand, stack, ModIngredientItems.SEAWATER_BUCKET.asStack(),
+                (bs) -> ModCauldronBlocks.SEAWATER_CAULDRON.get().isFull(state),
+                SoundEvents.BUCKET_FILL
+            )
+        );
+        emptyMap.put(
+            ModIngredientItems.SEAWATER_BUCKET.asItem(),
+            (state, level, pos, player, hand, stack) -> {
+                if (state.is(Blocks.CAULDRON)) {
+                    return CauldronInteraction.emptyBucket(
+                        level, pos, player, hand, stack,
+                        ModCauldronBlocks.SEAWATER_CAULDRON.get().fullFilled(),
                         SoundEvents.BUCKET_EMPTY
                     );
                 }
@@ -58,14 +85,14 @@ public class ModCauldronInteraction {
         CauldronInteractionManager.register(
             (stack) -> stack.is(ModItemTags.GLASS_CUP) && stack.get(ModComponents.EXTRA_DATA) == null,
             (level, player, hand, pos, state, stack, hitResult) -> switch (state) {
-                case BlockState bs when bs.is(ModBlocks.MILK_CAULDRON) -> fullCup(level, player, hand, pos, state, stack, 0, ModFoods.MILK);
-                case BlockState bs when bs.is(ModBlocks.HOT_COCOA_CAULDRON) -> fullCup(level, player, hand, pos, state, stack, 1, ModFoods.HOT_COCOA);
+                case BlockState bs when bs.is(ModCauldronBlocks.MILK_CAULDRON) -> fullCup(level, player, hand, pos, state, stack, 0, ModFoods.MILK);
+                case BlockState bs when bs.is(ModCauldronBlocks.HOT_COCOA_CAULDRON) -> fullCup(level, player, hand, pos, state, stack, 1, ModFoods.HOT_COCOA);
                 default -> InteractionResult.PASS;
             }
         );
 
-        registerCauldronInteraction(0, ModBlocks.MILK_CAULDRON.get());
-        registerCauldronInteraction(1, ModBlocks.HOT_COCOA_CAULDRON.get());
+        registerCauldronInteraction(0, ModCauldronBlocks.MILK_CAULDRON.get());
+        registerCauldronInteraction(1, ModCauldronBlocks.HOT_COCOA_CAULDRON.get());
 
         AnvilExtensionFoodMod.LOGGER.info("AnvilExtension Food Mod Cauldron Interactions loading.");
     }

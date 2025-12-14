@@ -4,11 +4,11 @@ import com.tterrag.registrate.Registrate;
 import com.tterrag.registrate.providers.ProviderType;
 import dev.burin.anvilextension.food.data.lang.LangLoader;
 import dev.burin.anvilextension.food.data.recipe.RecipeLoader;
-import dev.burin.anvilextension.food.init.ModBlocks;
 import dev.burin.anvilextension.food.init.ModCauldronInteraction;
+import dev.burin.anvilextension.food.init.ModCreativeModeTabs;
 import dev.burin.anvilextension.food.init.ModRecipeTypes;
+import dev.burin.anvilextension.food.init.block.ModBlocks;
 import dev.burin.anvilextension.food.init.item.ModComponents;
-import dev.burin.anvilextension.food.init.item.ModCreativeModeTabs;
 import dev.burin.anvilextension.food.init.item.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
@@ -25,9 +25,9 @@ public class AnvilExtensionFoodMod {
     public static final Registrate REGISTRATE = Registrate.create(MOD_ID);
 
     public AnvilExtensionFoodMod(IEventBus eventBus) {
-        ModItems.register();
         ModCreativeModeTabs.register(eventBus);
         ModBlocks.register();
+        ModItems.register();
         ModComponents.register(eventBus);
         ModRecipeTypes.register(eventBus);
 

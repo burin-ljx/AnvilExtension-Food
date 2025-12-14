@@ -20,8 +20,11 @@ version = getConfig("mod_version") + if (buildType.isEmpty()) "" else "+${buildT
 val modId = getConfig("mod_id")
 
 repositories {
+    maven {
+        name = "Aliyun Maven"
+        url = uri("https://maven.aliyun.com/repository/public/")
+    }
     mavenLocal()
-    mavenCentral()
     maven { // Anvil Lib
         name = "Cjsah Maven"
         url = uri("https://server.cjsah.net:1002/maven/")
@@ -217,5 +220,5 @@ tasks.withType<JavaCompile>().configureEach {
 }
 
 lombok {
-    version.set("1.18.38")
+    version.set("1.18.34")
 }
